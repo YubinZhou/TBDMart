@@ -1,35 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="CATEGORY">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_camera"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="饮品" />
+                <item
+                    android:id="@+id/nav_gallery"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="水果" />
+                <item
+                    android:id="@+id/nav_slideshow"
+                    android:icon="@drawable/ic_menu_slideshow"
+                    android:title="零食" />
+                <item
+                    android:id="@+id/nav_vegetable"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="蔬菜" />
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
-    </group>
+                <item
+                    android:id="@+id/nav_daliy"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="日常用品" />
 
-    <item android:title="Communicate">
+                <item
+                    android:id="@+id/nav_pantry"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="储藏室" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="SYSTEM">
         <menu>
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:title="Settings" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="About Us" />
+
         </menu>
     </item>
 
