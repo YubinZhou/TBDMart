@@ -1,4 +1,4 @@
-package tbd.tbdmart;
+package tbd.emart;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
