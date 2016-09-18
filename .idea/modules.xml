@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EMART.iml" filepath="$PROJECT_DIR$/EMART.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TBDMart.iml" filepath="$PROJECT_DIR$/TBDMart.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
