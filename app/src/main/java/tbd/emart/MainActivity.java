@@ -3,6 +3,7 @@ package tbd.emart;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -22,15 +23,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -79,18 +71,41 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        android.app.FragmentManager fragmentManager = getFragmentManager();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_beverage) {
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame, new beverageFragment())
+                    .commit();
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_fruit) {
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame, new fruitFragment())
+                    .commit();
+
+        } else if (id == R.id.nav_snake) {
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame, new snakeFragment())
+                    .commit();
 
         } else if (id == R.id.nav_vegetable) {
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame, new vegetableFragment())
+                    .commit();
 
-        } else if (id == R.id.nav_share) {
+        } else if(id == R.id.nav_daliy){
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame, new dailyFragment())
+                    .commit();
 
-        } else if (id == R.id.nav_send) {
+        } else if(id == R.id.nav_pantry){
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame, new pantryFragment())
+                    .commit();
+
+        }else if (id == R.id.nav_setting) {
+
+        } else if (id == R.id.nav_aboutus) {
 
         }
 
