@@ -26,25 +26,25 @@
 
                 >
             <ImageView
-                android:id="@+id/home"
+                android:id="@+id/iv_home"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:src="@drawable/ic_home"
                 android:layout_marginRight="20dp"
-                android:layout_toLeftOf="@+id/search"
+                android:layout_toLeftOf="@+id/iv_search"
                 />
 
             <ImageView
-                android:id="@+id/search"
+                android:id="@+id/iv_search"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:src="@drawable/ic_search"
                 android:layout_marginRight="20dp"
-                android:layout_toLeftOf="@+id/cart"
+                android:layout_toLeftOf="@+id/iv_cart"
                 />
 
             <ImageView
-                android:id="@+id/cart"
+                android:id="@+id/iv_cart"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginRight="10dp"

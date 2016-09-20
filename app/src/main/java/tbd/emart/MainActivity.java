@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,9 +14,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    ImageView iv_home;
+    ImageView iv_search;
+    ImageView iv_cart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +39,65 @@ public class MainActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
+        //Load the homepage
+
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.content_frame, new homepageFragment())
+                .commit();
+
+
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //Set up the bar buttons
+
+        iv_home = (ImageView) findViewById(R.id.iv_home);
+        iv_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                android.app.FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.content_frame, new homepageFragment())
+                        .commit();
+            }
+        });
+
+        iv_cart = (ImageView) findViewById(R.id.iv_cart);
+        iv_cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                android.app.FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.content_frame, new cartFragment())
+                        .commit();
+            }
+        });
+
+        iv_search = (ImageView) findViewById(R.id.iv_search);
+        iv_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                LayoutInflater factory = LayoutInflater.from(MainActivity.this);
+                final View view1 = factory.inflate(R.layout.utility_alertedittext,null);
+                final EditText searchingbox = (EditText)findViewById(R.id.searchingbox);
+
+                new AlertDialog.Builder(MainActivity.this).
+
+                                setTitle("Searching").//title
+                        setMessage("Please type in the item you want to search:").//message
+                        setView(view1).
+                        setPositiveButton("Search", new DialogInterface.OnClickListener() {//button
+                    @Override
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        //yes to do
+                    }
+                }).
+                        show();
+            }
+        });
     }
 
     @Override
@@ -47,7 +113,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-       // getMenuInflater().inflate(R.menu.main, menu);
+        // getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
@@ -59,9 +125,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-      //  if (id == R.id.action_settings) {
-       //     return true;
-       // }
+        //  if (id == R.id.action_settings) {
+        //     return true;
+        // }
 
         return super.onOptionsItemSelected(item);
     }

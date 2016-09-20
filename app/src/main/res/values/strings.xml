@@ -3,5 +3,7 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="shipping_handling"><![CDATA[Shipping & Handling]]></string>
+    <string name="estimated_gsthst"><![CDATA[Estimated GST/HST]]></string>
 
 </resources>
